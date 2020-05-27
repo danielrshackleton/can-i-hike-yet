@@ -1,5 +1,5 @@
 # can-i-hike-yet
-This simple script checks the Grouse Mountain website to see if operations are still cancelled, and emails me if there have been any updates. Scheduled runs in docker on private server.
+This simple script checks the Grouse Mountain website to see if operations are still cancelled, and notifies the user if there have been any updates. Scheduled runs in docker on private server.
 
 ## Built With
 - Selenium WebBrowser
