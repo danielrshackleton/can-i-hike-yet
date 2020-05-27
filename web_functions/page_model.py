@@ -17,6 +17,9 @@ def get_header():
     try:
         driver.get('https://www.grousemountain.com/')
         header = WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.ID, "container_text_1161242")))
+        assert header is True
+    except AssertionError:
+        print('Failed to get header')
     finally:
         terminate(driver)
         return header
