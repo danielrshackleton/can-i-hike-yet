@@ -29,7 +29,6 @@ def edge():
     return webdriver.Edge(EdgeChromiumDriverManager().install())
 
 
-
 def initiate():
     driver = None
     
