@@ -13,17 +13,35 @@ from webdriver_manager.utils import ChromeType
 import time
 
 
+def chrome():
+    return webdriver.Chrome(ChromeDriverManager().install())
+
+def chromium():
+    return webdriver.Chrome(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install())
+
+def firefox():
+    return webdriver.Firefox(executable_path=GeckoDriverManager().install())
+
+def ie():
+    return webdriver.Ie(IEDriverManager().install())
+
+def edge():
+    return webdriver.Edge(EdgeChromiumDriverManager().install())
+
+
+
 def initiate():
-    try:
-        driver = webdriver.Chrome(ChromeDriverManager().install())
-    except ValueError:
-        driver = webdriver.Chrome(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install())
-    except ValueError:
-        driver = webdriver.Firefox(executable_path=GeckoDriverManager().install())
-    except ValueError:
-        driver = webdriver.Ie(IEDriverManager().install())
-    except ValueError:
-        driver = webdriver.Edge(EdgeChromiumDriverManager().install())
+    driver = None
+    
+    browsers = [chrome,chromium,firefox,ie,edge]
+    
+    for browser in browsers:
+        try:
+            driver = browser()
+            if driver:
+                break
+        except:
+            continue
 
     return driver
 
