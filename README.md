@@ -19,4 +19,4 @@ This simple script checks the Grouse Mountain website to see if operations are s
 ## Usage
 After changing user credentials in either `credentials.py` or `notify.py`, schedule `main.py` to run automatically using cron or another scheduler.
 
-### NOTE: ChromeDriver/GeckoDriver etc. not needed, only the browsers themselves need be installed.
+##### NOTE: ChromeDriver/GeckoDriver etc. not needed, only the browsers themselves need be installed.
