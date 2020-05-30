@@ -47,15 +47,15 @@ def initiate():
 
 def get_header():
     driver = initiate()
-    header_text = None
+    header_text = 'closed until further notice'
     try:
-        web = driver.get('https://www.grousemountain.com/')
+        driver.get('https://www.grousemountain.com/')
         time.sleep(3)
         header = driver.find_element_by_xpath(("//div[@id='site_wide_alert']"))
         header_text = header.text
     finally:
         terminate(driver)
-        if driver:
+        if header:
             return header_text
 
 
