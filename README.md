@@ -7,14 +7,18 @@ This simple script checks the Grouse Mountain website to see if operations are s
 - smtplib
 
 ## Requirements
-1. If you don't have one already, set up a gmail account and create a new application password (under account security). 
+- Pipenv must be installed on your machine -> `pipenv run python check_website.py` to install dependencies from `Pipfile`
+- Must have a browser of some kind (eg. Chrome, Firefox etc.)
+- You need an email account/SMTP server
+##### Gmail example:
+Set up a Gmail account and create a new application password (under account security). 
 
 2. Either create a file called `credentials.py` which contains the following string variables within the web_functions package, or simply add these variables to `notify.py`:
 - `username` - set this as your gmail email address
 - `password` - set this as your application password created in step one
 - `recipient` - set this as the recipient email address 
 
-3. Pipenv must be installed on your machine -> `pipenv run python check_website.py` to install dependencies from `Pipfile`
+
 
 ## Usage
 After changing user credentials in either `credentials.py` or `notify.py`, schedule `main.py` to run automatically using cron or another scheduler.
